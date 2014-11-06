@@ -18,11 +18,11 @@ and open the template in the editor.
                     if (val === 'api') {
                         var clientKey = "UlsB8OaiWoeA7vdPzi0hg73G9wwa";
                         // var clientSecret = "uY9Tbv1iiacG14oAWfZOZDTZn9Ya";
-                        var redirectURL = "http://localhost:8080/EventReminder/form.jsp";
+                        var redirectURL = "http://localhost:8080/EventReminder/oauth_redirect.jsp";
                         var url = "https://localhost:8243/authorize";
-                        window.location = url + "?response_type=code&client_id=" + clientKey + "&scope=PRODUCTION&redirect_uri=" + redirectURL;
+                        window.location = url + "?response_type=token&client_id=" + clientKey + "&scope=PRODUCTION&redirect_uri=" + redirectURL;
                     } else {
-                        window.location = "";
+                        window.location = "http://localhost:8080/EventReminder/form.jsp?access_token=null&expire_in=0";
                     }
                 });
             });
