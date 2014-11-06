@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Validator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("input").click(function() {
+                    var val = $(this).val();
+
+                    if (val === 'api') {
+                        var clientKey = "UlsB8OaiWoeA7vdPzi0hg73G9wwa";
+                        // var clientSecret = "uY9Tbv1iiacG14oAWfZOZDTZn9Ya";
+                        var redirectURL = "http://localhost:8080/EventReminder/form.jsp";
+                        var url = "https://localhost:8243/authorize";
+                        window.location = url + "?response_type=code&client_id=" + clientKey + "&scope=PRODUCTION&redirect_uri=" + redirectURL;
+                    } else {
+                        window.location = "";
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <h3>Validator</h3>
+            <p>Select validator </p>
+            <input type="radio" name="validator" value="api" />Validator REST API
+            <input type="radio" name="validator" value="js" />Javascript Validator
+        </div>
+    </body>
+</html>
